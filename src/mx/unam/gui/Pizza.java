@@ -12,16 +12,18 @@ import javax.swing.border.EmptyBorder;
 
 public class Pizza extends JFrame {
 
-	private JPanel contentPane;
-	public CardLayout cardLayout;
+	public static JPanel contentPane;
+	public static CardLayout cardLayout;
 
 	public static String MENU = "Menu";
 	public static String CARRITO = "Carrito";
 	public static String CHECKOUT = "Checkout";
-	
-	Menu menu;
-	Carrito pedido;
-	Checkout checkout;
+
+	public static Menu menu;
+	public static Carrito carrito;
+	public static Checkout checkout;
+
+	public static double precioTotal = 0;
 
 	/**
 	 * Launch the application.
@@ -44,14 +46,14 @@ public class Pizza extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws ParseException 
+	 * 
+	 * @throws ParseException
 	 */
 	public Pizza() throws ParseException {
-		setMinimumSize(new Dimension(600, 600));
-		setPreferredSize(new Dimension(600, 600));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//setBounds(100, 100, 600, 600);
+		setMinimumSize(new Dimension(600, 600));
+		setPreferredSize(new Dimension(600, 600));
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -61,13 +63,11 @@ public class Pizza extends JFrame {
 		menu = new Menu();
 		contentPane.add(menu, MENU);
 
-		pedido = new Carrito();
-		contentPane.add(pedido, CARRITO);
-		
+		carrito = new Carrito();
+		contentPane.add(carrito, CARRITO);
+
 		checkout = new Checkout();
 		contentPane.add(checkout, CHECKOUT);
-
-		// cardLayout.next(contentPane);
 
 	}
 

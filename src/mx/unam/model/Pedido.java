@@ -45,4 +45,5 @@ public class Pedido {
 		listaProductos = new ArrayList<Producto>();
 		unidades = new ArrayList<Integer>();
 	}
+
 }

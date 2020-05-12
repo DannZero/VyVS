@@ -45,6 +45,18 @@ public class Menu extends JPanel {
 				addPizza(btnHawaiana);
 			}
 		});
+
+		JButton btnCarrito = new JButton(new ImageIcon(new ImageIcon(getClass().getResource("/img/carrito.png"))
+				.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
+		btnCarrito.setVerticalTextPosition(SwingConstants.TOP);
+		btnCarrito.setHorizontalTextPosition(SwingConstants.RIGHT);
+		btnCarrito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Pizza.cardLayout.next(Pizza.contentPane);
+			}
+		});
+		btnCarrito.setBounds(538, 6, 46, 46);
+		add(btnCarrito);
 		btnHawaiana.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnHawaiana.setVerticalTextPosition(SwingConstants.BOTTOM);
 		btnHawaiana.setText("Hawaiana");

@@ -43,12 +43,12 @@ public class Carrito extends JPanel {
 		contenidoCarrito.setLayout(new BoxLayout(contenidoCarrito, BoxLayout.Y_AXIS));
 
 		JLabel lblIconCarrito = new JLabel(new ImageIcon(new ImageIcon(getClass().getResource("/img/carrito.png"))
-				.getImage().getScaledInstance(70, 70, Image.SCALE_SMOOTH)));
+				.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
 		lblIconCarrito.setBounds(514, 6, 70, 70);
 		add(lblIconCarrito);
 
 		JLabel lblCarrito = new JLabel("Carrito");
-		lblCarrito.setBounds(6, 6, 496, 70);
+		lblCarrito.setBounds(6, 6, 578, 70);
 		lblCarrito.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCarrito.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
 		add(lblCarrito);
@@ -64,6 +64,7 @@ public class Carrito extends JPanel {
 		add(btnFinalizarPedido);
 
 		lblTotal = new JLabel("Total: $" + Pedido.precioTotal);
+		lblTotal.setFont(new Font("Lucida Grande", Font.BOLD, 14));
 		lblTotal.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblTotal.setBounds(296, 523, 129, 32);
 		add(lblTotal);
@@ -82,11 +83,11 @@ public class Carrito extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				contenidoCarrito.removeAll();
 				Pedido.removeAll();
+				lblTotal.setText("Total: $" + Pedido.precioTotal);
 				repaint();
 				revalidate();
 			}
 		});
-		btnVaciarCarrito.setContentAreaFilled(false);
 		btnVaciarCarrito.setBounds(151, 523, 133, 38);
 		add(btnVaciarCarrito);
 

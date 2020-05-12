@@ -11,6 +11,7 @@ import java.text.ParseException;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -42,7 +43,7 @@ public class Checkout extends JPanel {
 
 		JLabel lblApellidos = new JLabel("Apellidos");
 		lblApellidos.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblApellidos.setBounds(89, 177, 61, 16);
+		lblApellidos.setBounds(89, 183, 61, 16);
 		add(lblApellidos);
 
 		JLabel lblEmail = new JLabel("Correo electrónico");
@@ -60,7 +61,7 @@ public class Checkout extends JPanel {
 		add(textFieldNombre);
 
 		JTextField textFieldApellidos = new JTextField();
-		textFieldApellidos.setBounds(162, 172, 348, 26);
+		textFieldApellidos.setBounds(162, 178, 348, 26);
 		add(textFieldApellidos);
 
 		JLabel lblNewLabel = new JLabel("Dirección");
@@ -90,6 +91,7 @@ public class Checkout extends JPanel {
 		JButton btnEnviarOrden = new JButton("Enviar mi orden");
 		btnEnviarOrden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//JOptionPane.
 			}
 		});
 		btnEnviarOrden.setBounds(425, 517, 159, 47);

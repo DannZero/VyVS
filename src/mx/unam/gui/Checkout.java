@@ -18,6 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.text.MaskFormatter;
 
+import mx.unam.model.Pedido;
+
 public class Checkout extends JPanel {
 	private JTextField textField;
 
@@ -77,7 +79,7 @@ public class Checkout extends JPanel {
 		textFieldEmail.setBounds(162, 340, 348, 26);
 		add(textFieldEmail);
 
-		MaskFormatter mascara = new MaskFormatter("##-####-####");
+		MaskFormatter mascara = new MaskFormatter("## #### ####");
 		JFormattedTextField formattedTextFieldTelefono = new JFormattedTextField(mascara);
 		formattedTextFieldTelefono.addFocusListener(new FocusAdapter() {
 			@Override
@@ -91,7 +93,7 @@ public class Checkout extends JPanel {
 		JButton btnEnviarOrden = new JButton("Enviar mi orden");
 		btnEnviarOrden.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//JOptionPane.
+				JOptionPane.showMessageDialog(null, Pedido.listarPedido(), "Ticket", JOptionPane.PLAIN_MESSAGE);
 			}
 		});
 		btnEnviarOrden.setBounds(425, 517, 159, 47);

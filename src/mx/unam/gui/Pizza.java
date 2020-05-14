@@ -52,8 +52,8 @@ public class Pizza extends JFrame {
 	public Pizza() throws ParseException {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setMinimumSize(new Dimension(600, 600));
-		setPreferredSize(new Dimension(600, 600));
+		setMinimumSize(new Dimension(605, 605));
+		setPreferredSize(new Dimension(605, 605));
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

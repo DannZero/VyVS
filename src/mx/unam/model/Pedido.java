@@ -46,4 +46,16 @@ public class Pedido {
 		unidades = new ArrayList<Integer>();
 	}
 
+	public static String listarPedido() {
+		String lista = "";
+		String str;
+		for (int i = 0; i < listaProductos.size(); i++) {
+			str = listaProductos.get(i).nombre + " " + listaProductos.get(i).tamaño + " " + listaProductos.get(i).precio
+					+ " x " + unidades.get(i) + " = " + listaProductos.get(i).precio * unidades.get(i) + "\n";
+			lista += str;
+		}
+		lista += "Total: " + precioTotal;
+		return lista;
+	}
+
 }

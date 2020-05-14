@@ -136,7 +136,7 @@ public class Carrito extends JPanel {
 				reducirCantidad(prod);
 			}
 		});
-		btnMenos.setBounds(225, 32, 29, 27);
+		btnMenos.setBounds(225, 32, 40, 27);
 		panel.add(btnMenos);
 
 		JButton btnMas = new JButton("+");
@@ -145,14 +145,14 @@ public class Carrito extends JPanel {
 				aumentarCantidad(prod);
 			}
 		});
-		btnMas.setBounds(334, 34, 29, 26);
+		btnMas.setBounds(345, 32, 40, 27);
 		panel.add(btnMas);
 
 		textFieldCantidad = new JTextField();
 		textFieldCantidad.setEditable(false);
 		textFieldCantidad.setHorizontalAlignment(SwingConstants.CENTER);
 		textFieldCantidad.setText(String.valueOf(cantidad));
-		textFieldCantidad.setBounds(266, 33, 56, 26);
+		textFieldCantidad.setBounds(277, 33, 56, 26);
 		panel.add(textFieldCantidad);
 		textFieldCantidad.setColumns(10);
 	}
@@ -161,7 +161,7 @@ public class Carrito extends JPanel {
 		int index = Pedido.listaProductos.indexOf(prod);
 		int cantidad = Pedido.unidades.get(index);
 		Pedido.actualizarUnidades(prod, ++cantidad);
-		JTextField txtField = (JTextField) contenidoCarrito.getComponent(index).getComponentAt(267, 34);
+		JTextField txtField = (JTextField) contenidoCarrito.getComponent(index).getComponentAt(287, 40);
 		txtField.setText(String.valueOf(cantidad));
 		JLabel lbl = (JLabel) contenidoCarrito.getComponent(index).getComponentAt(447, 7);
 		lbl.setText(String.valueOf("Precio: $" + prod.precio * cantidad));
@@ -175,7 +175,7 @@ public class Carrito extends JPanel {
 		int cantidad = Pedido.unidades.get(index);
 		if (cantidad > 1) {
 			Pedido.actualizarUnidades(prod, --cantidad);
-			JTextField txtField = (JTextField) contenidoCarrito.getComponent(index).getComponentAt(267, 34);
+			JTextField txtField = (JTextField) contenidoCarrito.getComponent(index).getComponentAt(287, 40);
 			txtField.setText(String.valueOf(cantidad));
 			JLabel lbl = (JLabel) contenidoCarrito.getComponent(index).getComponentAt(447, 7);
 			lbl.setText(String.valueOf("Precio: $" + prod.precio * cantidad));
